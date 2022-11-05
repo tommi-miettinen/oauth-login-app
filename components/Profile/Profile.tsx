@@ -5,6 +5,8 @@ import Lottie from "react-lottie-player";
 import checkmark from "../../assets/checkmark.json";
 import axios from "axios";
 
+const isoStringToday = () => new Date().toISOString().split("T")[0];
+
 type ProfileProps = {
   user: UserData | null;
   setUserData: (userData: UserData) => void;
@@ -95,6 +97,8 @@ const Profile = ({ user, setUserData }: ProfileProps) => {
           <input
             type="date"
             value={dateOfBirth}
+            min="1920-01-01"
+            max={isoStringToday()}
             onChange={(e) => setDateOfBirth(e.target.value)}
             className="bg-[#010409] border border-[#30363D] mb-4 p-2 rounded-lg cursor-pointer focus:bg-[#0D1117] mr-auto"
           />
