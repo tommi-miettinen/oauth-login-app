@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slide {
+  animation: 1s slide-from-left forwards, 1s fade-away 2s forwards;
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade-away {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

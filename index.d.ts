@@ -56,3 +56,16 @@ type UserData = {
   };
   lastModified: string;
 };
+
+interface AppNotification {
+  message: string;
+  type: "success" | "error";
+  notificationId?: string;
+}
+
+type AppNotifications = AppNotification[];
+
+interface NotificationStore {
+  notifications: AppNotifications;
+  notify: (notification: AppNotification) => any;
+}
